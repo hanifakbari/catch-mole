@@ -1,0 +1,92 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.heading {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: black;
+}
+
+.score {
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+    margin: 2rem 0;
+}
+
+.holesCont {
+    display: flex;
+    justify-content: center;
+    cursor: none;
+}
+
+.hole {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border: 4px solid gray;
+    border-radius: 50%;
+    margin-left: 2rem;
+    overflow: hidden;
+}
+
+.mole {
+    position: absolute;
+    height: 80%;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: appear 0.3s linear;
+}
+
+@keyframes appear {
+    from {
+        bottom: -60px;
+    } to {
+        bottom: 0;
+    }
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.buttons button {
+    background-color: #EC4689;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+}
+
+.cursor img {
+    position: absolute;
+    height: 100px;
+    z-index: 2;
+    pointer-events: none;
+    transform: translate(-10px, -50px);
+}
+
+@keyframes hit {
+    from {
+        transform: rotate(30deg);
+    } to {
+        transform: rotate(-30deg);
+    }
+    
+}
+
